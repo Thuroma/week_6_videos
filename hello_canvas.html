@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            canvas {
+                border: 1px black solid;
+            }
+        </style>
+    </head>
+
+    <body>
+        <canvas id="canvas" height="500" width="800">
+
+        </canvas>
+
+        <script>
+            let canvas = document.querySelector('#canvas')
+            let context = canvas.getContext('2d')
+
+            // drawing lines
+            context.beginPath()
+            context.moveTo(10, 10)
+            context.lineTo(450, 450)
+            context.lineTo(400, 30)
+            context.lineTo(10, 10)
+            context.lineTo(450, 450)
+
+            context.lineWidth = 30
+            context.strokeStyle = 'purple'
+            context.stroke()
+
+            // line segment
+            context.beginPath()
+            context.moveTo(50, 50)
+            context.lineTo(250, 500)
+            context.lineWidth = 4
+            context.strokeStyle = 'orange'
+            context.stroke()
+
+
+            // drawing circles
+            context.beginPath()
+            // (center, coordinates, radius, start angle, end angle)
+            context.arc(250, 250, 75, 0, 6.3)
+            context.strokeStyle = 'darkblue'
+            context.lineWidth = 15
+            context.stroke()
+
+
+            // drawing text
+            context.fillStyle = 'magenta'
+            context.font = '50px Courier'
+            context.fillText('Hello World', 50, 50)
+
+            context.strokeStyle = 'black'
+            context.lineWidth = 2
+            context.strokeText('This is some more text', 50, 100)
+
+
+            // drawing rectangles
+            // draws a filled rectangle
+            // attributes: left ? px, down ? px, width, height
+            context.fillRect(120, 20, 50, 200)
+
+            // draws the outline of a rectangle
+            context.strokeRect(200, 300, 100, 150)
+
+            // change the color of the filled rectangle
+            context.fillStyle = 'red'
+            context.fillRect(400, 50, 100, 100)
+
+            // change the color and line width of the outlined rectangle
+            context.strokeStyle = 'green'
+            context.lineWidth = 20
+            context.strokeRect(250, 200, 240, 100)
+
+            // strokeRect on fillRect to make an outlined rectangle
+            context.fillStyle = 'yellow'
+            context.strokeStyle = 'blue'
+            context.lineWidth = 3
+            context.fillRect(25, 300, 150, 150)
+            context.strokeRect(25, 300, 150, 150)
+        </script>
+    </body>
+
+</html>
